@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Medicherla Jyotsna Yalla Sri | iOS &amp; Flutter Developer, Hyderabad</title>
-<meta name="description" content="Mobile Application Developer with 2+ years of experience in iOS development (Swift, UIKit, CocoaPods, Xcode), Flutter and Dart, and REST API integration. Based in Hyderabad, India.">
+<meta name="description" content="Mobile Application Developer experienced in iOS development (Swift, UIKit, CocoaPods, Xcode), Flutter and Dart, and REST API integration. Based in Hyderabad, India.">
 <meta name="theme-color" content="#070B1F">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%234F6BFF'/%3E%3Ctext x='50' y='66' font-size='46' font-family='sans-serif' font-weight='700' text-anchor='middle' fill='white'%3EMJ%3C/text%3E%3C/svg%3E">
 <style>
@@ -173,7 +173,7 @@ footer{color:var(--muted);font-size:13px;text-align:center}
             <div class="status">Working as an iOS Developer at Medicover</div>
             <h1 id="h-name">Medicherla Jyotsna Yalla Sri</h1>
             <p class="role">iOS Developer | Flutter Developer | Mobile Application Developer</p>
-            <p class="lead">Mobile developer with 2+ years of professional experience. I build iOS screens in Swift and UIKit for a healthcare patient app, and I am expanding into cross-platform development with Flutter and Dart.</p>
+            <p class="lead">Mobile developer with <span data-exp="years">2+ years</span> of professional experience. I build iOS screens in Swift and UIKit for a healthcare patient app, and I am expanding into cross-platform development with Flutter and Dart.</p>
             <div class="actions">
               <a class="btn primary" id="dl-resume" href="./resume.pdf" download="Medicherla_Jyotsna_Yalla_Sri_Resume.pdf">
                 <svg class="i" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M4 20h16"/></svg>Download Resume</a>
@@ -185,7 +185,7 @@ footer{color:var(--muted);font-size:13px;text-align:center}
             <div class="monogram" aria-hidden="true">MJ</div>
             <div class="facts">
               <div class="fact"><svg class="i" viewBox="0 0 24 24"><path d="M12 21s7-6 7-12a7 7 0 10-14 0c0 6 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Hyderabad, Telangana, India</div>
-              <div class="fact"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>2+ years of experience</div>
+              <div class="fact"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span data-exp="years">2+ years</span> of experience</div>
               <div class="fact"><svg class="i" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg>Swift · UIKit · Flutter · Dart</div>
             </div>
           </aside>
@@ -203,7 +203,7 @@ footer{color:var(--muted);font-size:13px;text-align:center}
         <p class="sec-sub">A short summary of what I do and how I work.</p>
         <div class="about-grid">
           <div class="card">
-            <p>I am a mobile application developer with more than two years of professional experience in software development. For the past stretch I have worked on iOS development with Swift, UIKit, CocoaPods and Xcode on a healthcare patient app.</p>
+            <p>I am a mobile application developer with <span data-exp="years">2+ years</span> of professional experience in software development. For the past stretch I have worked on iOS development with Swift, UIKit, CocoaPods and Xcode on a healthcare patient app.</p>
             <p>I am skilled at building user interfaces from Figma designs, integrating REST APIs, debugging and testing features, and collaborating with development teams. I am now expanding into cross-platform development through hands-on Flutter and Dart projects.</p>
           </div>
           <div class="card">
@@ -231,7 +231,7 @@ footer{color:var(--muted);font-size:13px;text-align:center}
         <p class="sec-sub">My work history, newest first.</p>
         <div class="timeline">
           <article class="card job current">
-            <div class="job-head"><h3>iOS Developer</h3><span class="date">Dec 2024 – Present</span></div>
+            <div class="job-head"><h3>iOS Developer</h3><span class="date">May 2024 – Present · <span data-exp="duration">2 yrs 6 mos</span></span></div>
             <p class="company">Medicover Corporate Office</p>
             <ul>
               <li>Develop and maintain iOS features for the Sahrudaya Emp App using Swift and UIKit, with dependencies managed through CocoaPods.</li>
@@ -421,6 +421,21 @@ const io = new IntersectionObserver((entries) => {
   entries.forEach(en => { if (en.isIntersecting) setActive(en.target.id); });
 }, { rootMargin: '-35% 0px -55% 0px' });
 document.querySelectorAll('main section').forEach(s => io.observe(s));
+
+/* ===== Auto-updating experience (based on the iOS Developer start date) ===== */
+const IOS_START = { year: 2024, month: 5 };   // May 2024 - change here if the start date changes
+const updateExperience = () => {
+  const now = new Date();
+  let months = (now.getFullYear() - IOS_START.year) * 12 + (now.getMonth() + 1 - IOS_START.month);
+  if (now.getDate() < 1) months -= 1;
+  months = Math.max(months, 0);
+  const y = Math.floor(months / 12), m = months % 12;
+  const years = y >= 1 ? `${y}+ year${y > 1 ? 's' : ''}` : `${months} month${months === 1 ? '' : 's'}`;
+  const duration = [y ? `${y} yr${y > 1 ? 's' : ''}` : '', m ? `${m} mo${m > 1 ? 's' : ''}` : ''].filter(Boolean).join(' ') || '1 mo';
+  document.querySelectorAll('[data-exp="years"]').forEach(el => el.textContent = years);
+  document.querySelectorAll('[data-exp="duration"]').forEach(el => el.textContent = duration);
+};
+updateExperience();
 
 document.getElementById('year').textContent = new Date().getFullYear();
 </script>
