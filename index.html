@@ -103,6 +103,7 @@ h1{font-size:clamp(34px,5vw,54px);margin-bottom:12px}
 .project-top{display:flex;gap:16px;align-items:center}
 .proj-icon{width:60px;height:60px;border-radius:17px;display:grid;place-items:center;background:linear-gradient(145deg,var(--accent),var(--accent-2));flex:none}
 .proj-icon svg{width:28px;height:28px}
+.project>*{min-width:0}
 .project + .project{margin-top:var(--gap)}
 .project h4{font-size:15px;margin-bottom:10px;color:#B8C2FF}
 .project ul{list-style:none;display:grid;gap:9px}
@@ -231,7 +232,7 @@ footer{color:var(--muted);font-size:13px;text-align:center}
         <div class="timeline">
           <article class="card job current">
             <div class="job-head"><h3>iOS Developer</h3><span class="date">Dec 2024 – Present</span></div>
-            <p class="company">Medicover Corporate Office · Project: Sahrudaya Emp App (healthcare mobile application)</p>
+            <p class="company">Medicover Corporate Office</p>
             <ul>
               <li>Develop and maintain iOS features for the Sahrudaya Emp App using Swift and UIKit, with dependencies managed through CocoaPods.</li>
               <li>Build and enhance app screens and reusable UI components, implementing layouts from Figma designs.</li>
@@ -266,7 +267,7 @@ footer{color:var(--muted);font-size:13px;text-align:center}
       <!-- PROJECTS -->
       <section id="projects" aria-labelledby="h-proj">
         <h2 class="sec-title" id="h-proj">Projects</h2>
-        <p class="sec-sub">iOS apps I have worked on, both live on the App Store.</p>
+        <p class="sec-sub">iOS apps I have worked on.</p>
         <article class="card project">
           <div class="project-top">
             <div class="proj-icon" aria-hidden="true"><svg class="i" viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18h2"/></svg></div>
@@ -274,6 +275,10 @@ footer{color:var(--muted);font-size:13px;text-align:center}
           </div>
           <p style="color:#CBD1EE">I develop and maintain iOS features for this healthcare app, build screens and reusable UI components from Figma designs, and integrate REST APIs to connect the app with backend services. I also debug and test the app to improve performance and user experience.</p>
           <div class="chips"><span class="chip">Swift</span><span class="chip">UIKit</span><span class="chip">CocoaPods</span><span class="chip">Xcode</span><span class="chip">REST APIs</span><span class="chip">JSON</span><span class="chip">Figma</span></div>
+          <div>
+            <h4>Screens</h4>
+            <div class="chips"><span class="chip">Appointment Slot Summary</span><span class="chip">Appointment List</span><span class="chip">Doctor</span><span class="chip">Patient Referral</span><span class="chip">Attendance Average Details</span><span class="chip">Employee Attendance Average</span><span class="chip">HRMS</span><span class="chip">Task Manager</span><span class="chip">Wellness</span><span class="chip">Revenue including on bed</span><span class="chip">Console Expiry Stock Summary</span><span class="chip">On Bed Occupancy Report</span><span class="chip">Planned Admissions Report</span></div>
+          </div>
           <div class="actions">
             <a class="btn primary" href="https://apps.apple.com/us/app/sahrudaya-emp/id1538916769" target="_blank" rel="noopener noreferrer" aria-label="View Sahrudaya Emp App on the App Store (opens in a new tab)">
               View on App Store
@@ -295,13 +300,38 @@ footer{color:var(--muted);font-size:13px;text-align:center}
               <li>Implemented healthcare workflows for appointments, records, prescriptions, billing, and family management.</li>
             </ul>
           </div>
+          <div class="chips"><span class="chip">Swift</span><span class="chip">UIKit</span><span class="chip">REST APIs</span><span class="chip">JSON</span></div>
           <div>
             <h4>Screens</h4>
             <div class="chips"><span class="chip">My Reports</span><span class="chip">My Appointments</span><span class="chip">Family Members</span><span class="chip">Dashboard</span><span class="chip">My Prescriptions</span><span class="chip">Favourite List</span><span class="chip">My Bills</span><span class="chip">Upload New Prescription</span><span class="chip">Doctors List</span><span class="chip">Slot Booking</span><span class="chip">Patient Details</span></div>
           </div>
-          <div class="chips"><span class="chip">Swift</span><span class="chip">UIKit</span><span class="chip">REST APIs</span><span class="chip">JSON</span></div>
           <div class="actions">
             <a class="btn primary" href="https://apps.apple.com/in/app/medicover-hospitals/id1517761354" target="_blank" rel="noopener noreferrer" aria-label="View Medicover Hospitals on the App Store (opens in a new tab)">
+              View on App Store
+              <svg class="i" viewBox="0 0 24 24" style="width:18px;height:18px"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          </div>
+        </article>
+        <article class="card project">
+          <div class="project-top">
+            <div class="proj-icon" aria-hidden="true"><svg class="i" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.7-3.7 3.2-5.5 6.5-5.5s5.8 1.8 6.5 5.5M16 5.2a3.5 3.5 0 010 5.6M18 14.8c1.9.7 3.1 2.4 3.5 5.2"/></svg></div>
+            <div><h3>TGSRTC Employee</h3><p class="meta">HRMS application · iOS</p></div>
+          </div>
+          <p style="color:#CBD1EE">An employee-focused HRMS application for streamlining human resource processes including payroll, time and attendance tracking, leave management, performance evaluations, and employee-related services.</p>
+          <div>
+            <h4>My contributions</h4>
+            <ul>
+              <li>Developed and enhanced employee-facing iOS screens using Swift and UIKit.</li>
+              <li>Worked on REST API integration, JSON data handling, navigation, and UI implementation.</li>
+              <li>Implemented employee service and organizational information screens.</li>
+            </ul>
+          </div>
+          <div class="chips"><span class="chip">Swift</span><span class="chip">UIKit</span><span class="chip">REST APIs</span><span class="chip">JSON</span></div>
+          <div>
+            <h4>Screens &amp; modules</h4>
+            <div class="chips"><span class="chip">Apply Leave</span><span class="chip">Payslip</span><span class="chip">My Grievance</span><span class="chip">Gallery</span><span class="chip">News and Circulars</span><span class="chip">Performance Particulars</span><span class="chip">In Extra Mile</span><span class="chip">MD’s Desk</span><span class="chip">Depot Heroes</span></div>
+          </div>
+          <div class="actions">
+            <a class="btn primary" href="https://apps.apple.com/in/app/tgsrtc-employee/id6446243313" target="_blank" rel="noopener noreferrer" aria-label="View TGSRTC Employee on the App Store (opens in a new tab)">
               View on App Store
               <svg class="i" viewBox="0 0 24 24" style="width:18px;height:18px"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
           </div>
